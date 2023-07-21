@@ -18,6 +18,13 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.logo.vitest:hover {
+  filter: drop-shadow(0 0 2em #86B91A);
+}
+
+.logo.typescript:hover {
+  filter: drop-shadow(0 0 2em #3178C6);
+}
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
