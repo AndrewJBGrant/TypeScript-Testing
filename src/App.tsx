@@ -8,6 +8,14 @@ import './App.css'
 function App() {
   const [count, setCount] = useState(2)
 
+
+function add(a: number, b: number) {
+  return a + b;
+}
+
+console.log(add(2, 2));
+
+
   return (
     <>
       <div>

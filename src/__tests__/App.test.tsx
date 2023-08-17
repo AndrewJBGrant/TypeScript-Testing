@@ -8,7 +8,6 @@ import { it, expect } from 'vitest';
 //     });
 // });
 
-
 // interface User {
 //   id: number;
 //   firstName: string;
@@ -43,67 +42,157 @@ import { it, expect } from 'vitest';
 // });
 
 // export const addTwoNumbers = (params: { first: number, second: number}) => {
-//   return params.first * params.second;
+//   return params.first + params.second;
 // };
 
-// it("Should add the two numbers together", () => {
+// it("I want it to add the two numbers together", () => {
 //   expect(
 //     addTwoNumbers({
-//       first: 2,
+//       first: 4,
 //       second: 4,
 //     }),
 //   ).toEqual(8);
 
-//   // expect(
-//   //   addTwoNumbers({
-//   //     first: 10,
-//   //     second: 20,
-//   //   }),
-//   // ).toEqual(30);
+//    expect(
+//      addTwoNumbers({
+//        first: 10,
+//        second: 20,
+//      }),
+//    ).toEqual(30);
 // });
 
+// interface User {
+//   id: number;
+//   firstName: string;
+//   lastName: string;
+//   role: "admin" | "user" | "super-admin";
+//   posts: Array<Post>;
+// }
 
-interface User {
-  id: number;
-  firstName: string;
-  lastName: string;
-  role: "admin" | "user" | "super-admin";
-  posts: Array<Post>;
+// interface Post {
+//   id: number;
+//   title: string;
+// }
+
+// /**
+//  * How do we ensure that makeUser ALWAYS
+//  * returns a user?
+//  */
+// const makeUser = (): User => {
+//   return {
+//     id: 2,
+//     firstName: 'Katya',
+//     lastName: 'Sitko',
+//     role: 'super-admin',
+//     posts: [
+//       {
+//       id: 1,
+//       title: 'hello my first post',
+//       }
+//     ],
+
+//   };
+// };
+
+// it("Should return a valid user", () => {
+//   const user = makeUser();
+
+//   expect(user.id).toBeTypeOf("number");
+//   expect(user.firstName).toBeTypeOf("string");
+//   expect(user.lastName).toBeTypeOf("string");
+//   expect(user.role).to.be.oneOf(["super-admin", "admin", "user"]);
+
+//   expect(user.posts[0].id).toBeTypeOf("number");
+//   expect(user.posts[0].title).toBeTypeOf("string");
+// });
+
+// function sum_char_codes(n: string): number {
+//   let sum = 0;
+//   for (let i = 0; i < n.length; ++i) {
+//     sum += n.charCodeAt(i)
+//   }
+
+//   return sum;
+// }
+
+// console.log(sum_char_codes("hello"))
+
+// const str = "today i am learning to test with typescript"
+
+// const splitStr = str.split(" ");
+
+// console.log(splitStr);
+
+// for (let i = 0; i < splitStr.length; i++) {
+//     splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].slice(1);
+// }
+
+// const str2 = splitStr.join(" ");
+
+// console.log(str2);
+
+
+
+
+function first_letter_caps(n: string) {
+const arr = n.split(" ");
+
+for (let i = 0; i < arr.length; i++) {
+  arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1);
+}
+const capString = arr.join(" ")
+
+return capString
+}
+ it("I want the first letters in caps", () => {
+   expect(
+     first_letter_caps(
+       "hello world"
+     ),
+   ).toEqual("Hello World");
+
+    expect(
+      first_letter_caps(
+      "today i am learning typeScript tests"
+      ),
+    ).toEqual("Today I Am Learning TypeScript Tests");
+ });
+
+
+
+
+function reverse_string_words(s: string) {
+  let reversedString = "";
+  for (let i = s.length - 1; i >= 0; i--) {
+    reversedString += s[i];
+  }
+
+  const words = reversedString.split(" ");
+  const reversedWords = words.map((word) => {
+    return reverse_string(word);
+  });
+
+  return reversedWords.join(" ");
 }
 
-interface Post {
-  id: number;
-  title: string;
+function reverse_string(s: string) {
+  let newString = "";
+  for (let i = s.length - 1; i >= 0; i--) {
+    newString += s[i];
+  }
+  return newString;
 }
 
-/**
- * How do we ensure that makeUser ALWAYS
- * returns a user?
- */
-const makeUser = (): User => {
-  return {
-    id: 2,
-    firstName: 'Katya',
-    lastName: 'Sitko',
-    role: 'super-admin',
-    posts: [
-      {
-      id: 1,
-      title: 'hello my first post',
-      }
-    ],
+ it("I want to reverse the word", () => {
+   expect(
+     reverse_string_words(
+       "Hello World"
+     ),
+   ).toEqual("World Hello");
 
-  };
-};
-
-it("Should return a valid user", () => {
-  const user = makeUser();
-
-  expect(user.id).toBeTypeOf("number");
-  expect(user.firstName).toBeTypeOf("string");
-  expect(user.lastName).toBeTypeOf("string");
-  expect(user.role).to.be.oneOf(["super-admin", "admin", "user"]);
-
-  expect(user.posts[0].id).toBeTypeOf("number");
-  expect(user.posts[0].title).toBeTypeOf("string");
-});
+    expect(
+      reverse_string_words(
+      "today i am learning typeScript tests"
+      ),
+    ).toEqual("tests typeScript learning am i today");
+ });
