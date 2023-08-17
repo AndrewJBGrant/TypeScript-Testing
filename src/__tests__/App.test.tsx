@@ -196,3 +196,47 @@ function reverse_string(s: string) {
       ),
     ).toEqual("tests typeScript learning am i today");
  });
+
+
+
+const dates = [
+  { date: "2023-05-17"},
+  { date: "2023-04-12"},
+  { date: "2023-01-11" },
+  { date: "2023-03-22" },
+  { date: "2023-02-27" },
+]
+
+
+function sortDates(arr: typeof dates) {
+  return arr.sort((a, b) => {
+    if (a.date < b.date) {
+      return -1;
+    }
+
+    if (a.date > b.date) {
+      return 1;
+    }
+
+    return 0;
+  });
+}
+
+ it("Organize the dates", () => {
+   expect(
+     sortDates([{
+       date:  "2023-05-17"},
+    {date: "2023-04-12"},
+    {date: "2023-01-11"} ,
+    {date: "2023-03-22"} ,
+    {date: "2023-02-27"}]
+     ),
+   ).toEqual([
+  { date: '2023-01-11' },
+  { date: '2023-02-27' },
+  { date: '2023-03-22' },
+  { date: '2023-04-12' },
+  { date: '2023-05-17' }
+]);
+
+ });
