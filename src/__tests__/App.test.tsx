@@ -1,6 +1,7 @@
 // Imports
 import { it, expect } from 'vitest';
 
+
 // Tests
 // describe('Renders main page correctly', async () => {
 //     it('Should render the page correctly', async () => {
@@ -212,6 +213,8 @@ function sortDates(arr: typeof dates) {
   return arr.sort((a, b) => {
     if (a.date < b.date) {
       return -1;
+
+      //         ^?
     }
 
     if (a.date > b.date) {

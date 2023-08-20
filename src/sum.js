@@ -1,3 +1,15 @@
+export function sum(a, b) {
+
+  return a + b
+}
+
+export function multiply(a, b) {
+
+  return a * b
+}
+
+
+
 // function add(a, b) {
 //   return a * b;
 // }
@@ -52,29 +64,29 @@
 
 // console.log(reverse_string("Hello World"));
 
-function reverse_string_with_reversed_words(s) {
-  let reversedString = "";
-  for (let i = s.length - 1; i >= 0; i--) {
-    reversedString += s[i];
-  }
+// function reverse_string_with_reversed_words(s) {
+//   let reversedString = "";
+//   for (let i = s.length - 1; i >= 0; i--) {
+//     reversedString += s[i];
+//   }
 
-  let words = reversedString.split(" ");
-  let reversedWords = words.map((word) => {
-    return reverse_string(word);
-  });
+//   let words = reversedString.split(" ");
+//   let reversedWords = words.map((word) => {
+//     return reverse_string(word);
+//   });
 
-  return reversedWords.join(" ");
-}
+//   return reversedWords.join(" ");
+// }
 
-function reverse_string(s) {
-  let newString = "";
-  for (let i = s.length - 1; i >= 0; i--) {
-    newString += s[i];
-  }
-  return newString;
-}
+// function reverse_string(s) {
+//   let newString = "";
+//   for (let i = s.length - 1; i >= 0; i--) {
+//     newString += s[i];
+//   }
+//   return newString;
+// }
 
-console.log(reverse_string_with_reversed_words("today i am learning typeScript tests"));
+// console.log(reverse_string_with_reversed_words("today i am learning typeScript tests"));
 
 
 // const people = [
@@ -105,30 +117,30 @@ console.log(reverse_string_with_reversed_words("today i am learning typeScript t
 
 
 
-const dates = [
-  { date: "2023-05-17"},
-  { date: "2023-04-12"},
-  { date: "2023-01-11" },
-  { date: "2023-03-22" },
-  { date: "2023-02-27" },
-]
+// const dates = [
+//   { date: "2023-05-17"},
+//   { date: "2023-04-12"},
+//   { date: "2023-01-11" },
+//   { date: "2023-03-22" },
+//   { date: "2023-02-27" },
+// ]
 
 
-function sortDates(arr) {
-  return arr.sort((a, b) => {
-    if (a.date < b.date) {
-      return -1;
-    }
+// function sortDates(arr) {
+//   return arr.sort((a, b) => {
+//     if (a.date < b.date) {
+//       return -1;
+//     }
 
-    if (a.date > b.date) {
-      return 1;
-    }
+//     if (a.date > b.date) {
+//       return 1;
+//     }
 
-    return 0;
-  });
-}
+//     return 0;
+//   });
+// }
 
-console.log(sortDates(dates));
+// console.log(sortDates(dates));
 
 
   // const month = props.date.toLocaleString("en-US", { month: "long" });
