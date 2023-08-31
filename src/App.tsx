@@ -1,12 +1,13 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import vitestLogo from './assets/vitest.svg'
 import typeScriptLogo from './assets/typescript.svg'
 import viteLogo from '/vite.svg'
+import Demo from "./useRef";
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(2)
+  // const [count, setCount] = useState(2)
 
 
 function add(a: number, b: number) {
@@ -34,9 +35,9 @@ console.log(add(2, 2));
       </div>
       <h1>Vite + React</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count * 2)}>
+        {/* <button onClick={() => setCount((count) => count * 2)}>
           count is {count}
-        </button>
+        </button> */}
         <p>
           Edit <code>src/App.tsx</code> and save to test HMR
         </p>
@@ -44,6 +45,7 @@ console.log(add(2, 2));
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <Demo />
     </>
   )
 }

@@ -8,7 +8,7 @@ export function multiply(a, b) {
   return a * b
 }
 
-
+console.log(sum(5, 6));
 
 // function add(a, b) {
 //   return a * b;
